@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Student Portal - External CSS Demo</title>
+
+    <!-- Requirement 1: External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Student Portal</h1>
+        <p class="tagline">This is a demo of external CSS styling and validation form</p>
+    </header>
+
+
+    <!-- Requirement 2 & 3: Section -->
+    <section class="content-section">
+
+        <h2 class="section-heading">Welcome to CSS Styling</h2>
+
+        <p id="highlight-text">
+            This paragraph uses ID selector with special styling.
+        </p>
+
+        <p>
+            This paragraph uses element selector. This section has background
+            color and border applied using external CSS.
+        </p>
+
+    </section>
+
+
+    <!-- Requirement 4: Div with margin and padding -->
+    <div class="for-div">
+
+        This DIV demonstrates margin, padding, border, and background color.
+
+    </div>
+
+
+    <!-- Requirement 5: Styled Form -->
+    <form class="form-style">
+
+        <h2 class="form-heading">Registration Form</h2>
+
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your name" required>
+
+
+        <label>Email Address</label>
+        <input type="email" placeholder="Enter your email" required>
+
+
+        <label>Password</label>
+        <input type="password" placeholder="Enter password" required>
+
+
+        <label>Gender</label>
+
+        <div class="gender-group">
+
+            <label>
+                <input type="radio" name="gender" required>
+                Male
+            </label>
+
+            <label>
+                <input type="radio" name="gender" required>
+                Female
+            </label>
+
+        </div>
+
+
+        <label>Select Course</label>
+
+        <select required>
+
+            <option value="">Select Course</option>
+            <option>HTML</option>
+            <option>CSS</option>
+            <option>JavaScript</option>
+            <option>React</option>
+
+        </select>
+
+
+        <button type="submit">Register</button>
+
+    </form>
+
+</body>
+</html>

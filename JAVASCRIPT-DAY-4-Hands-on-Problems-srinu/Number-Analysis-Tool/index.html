@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number Analysis Tool</title>
+</head>
+<body>
+
+<h1>Number Analysis Tool</h1>
+
+<script>
+    let number = 5;
+
+    // (ternary) operator to check Positive or Negative
+    let result = (number >= 0) ? "Positive" : "Negative";
+    console.log("Number:", number);
+    console.log("Positive/Negative:", result);
+
+
+    // Use if–else to check Even or Odd
+    if (number % 2 === 0) {
+        console.log("Even/Odd: Even");
+    }
+    else {
+        console.log("Even/Odd: Odd");
+    }
+
+    //loop to print numbers from 1 to the given number
+    console.log("Numbers from 1 to", number, ":");
+    // Using for loop for iteration
+    for (let i = 1; i <= number; i++) {
+
+        console.log(i);
+    }
+</script>
+</body>
+</html>

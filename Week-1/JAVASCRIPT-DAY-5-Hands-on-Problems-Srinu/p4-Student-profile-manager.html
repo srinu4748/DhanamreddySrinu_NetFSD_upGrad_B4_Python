@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Student Profile Manager</title>
+    <style>
+        /* Styled div for displaying profile */
+        #profileContainer {
+            border: 2px solid #333;
+            padding: 15px;
+            width: 300px;
+            margin-top: 20px;
+            background-color: #f2f2f2;
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Student Profile Manager</h2>
+
+    <!-- Button to display student profile -->
+    <button onclick="updateStudentProfile(student)">
+        Display Student Profile
+    </button>
+
+    <br><br>
+
+    <!-- Input to update marks -->
+    <input type="number" id="newMarksInput" placeholder="Enter new marks">
+    <button onclick="updateMarksFromInput()">
+        Update Marks
+    </button>
+
+    <!-- Styled div where student details will appear -->
+    <div id="profileContainer"></div>
+
+    <script>
+
+        // ================================
+        // Requirement: Student object in GLOBAL scope
+        // ================================
+        var student = {
+            name: "Srinu",
+            rollNo: "101",
+            marks: 85
+        };
+
+        // ===============================================
+        // Requirement: Function accepts object parameter
+        // Displays details in styled <div>
+        // ===============================================
+        function updateStudentProfile(studentObj) {
+
+            document.getElementById("profileContainer").innerHTML =
+                "<h3>Student Details</h3>" +
+                "<p><strong>Name:</strong> " + studentObj.name + "</p>" +
+                "<p><strong>Roll No:</strong> " + studentObj.rollNo + "</p>" +
+                "<p><strong>Marks:</strong> " + studentObj.marks + "</p>";
+        }
+
+        // ===============================================
+        // Requirement: Update marks using parameter
+        // Update object value and refresh display
+        // ===============================================
+        function updateMarks(newMarks) {
+
+            student.marks = newMarks;  // Update object property
+
+            // Refresh display without page reload
+            updateStudentProfile(student);
+        }
+
+        // Helper function to get input value
+        function updateMarksFromInput() {
+
+            var newMarks = document.getElementById("newMarksInput").value;
+
+            if (newMarks === "") {
+                alert("Please enter marks");
+                return;
+            }
+
+            updateMarks(Number(newMarks)); // Pass parameter
+        }
+
+    </script>
+
+</body>
+</html>

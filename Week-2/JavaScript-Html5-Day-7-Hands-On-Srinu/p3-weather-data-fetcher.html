@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Data Fetcher</title>
+</head>
+<body>
+    <h2>Check Console for Weather Report</h2>
+
+    <script>
+        const latitude = 17.3850;   // Hyderabad
+        const longitude = 78.4867;
+
+        const API_URL = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`;
+
+        // ==============================
+        // 1️⃣ VERSION USING PROMISES
+        // ==============================
+
+        const fetchWeatherWithPromises = () => {
+
+            fetch(API_URL)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+
+                    const weather = data.current_weather;
+
+                    const report = `
+======= WEATHER REPORT (Promises) =======
+
+Temperature: ${weather.temperature}°C
+Wind Speed: ${weather.windspeed} km/h
+Wind Direction: ${weather.winddirection}°
+Time: ${weather.time}
+
+========================================
+`;
+
+                    console.log(report);
+                })
+                .catch(error => {
+                    console.error("Error fetching weather (Promises):", error.message);
+                });
+        };
+
+
+        // ==================================
+        // 2️⃣ VERSION USING ASYNC/AWAIT
+        // ==================================
+
+        const fetchWeatherAsync = async () => {
+
+            try {
+                const response = await fetch(API_URL);
+
+                if (!response.ok) {
+                    throw new Error("Network response failed");
+                }
+
+                const data = await response.json();
+
+                const weather = data.current_weather;
+
+                const report = `
+======= WEATHER REPORT (Async/Await) =======
+
+Temperature: ${weather.temperature}°C
+Wind Speed: ${weather.windspeed} km/h
+Wind Direction: ${weather.winddirection}°
+Time: ${weather.time}
+
+============================================
+`;
+
+                console.log(report);
+
+            } catch (error) {
+                console.error("Error fetching weather (Async/Await):", error.message);
+            }
+        };
+
+
+        // Call Both Versions
+        fetchWeatherWithPromises();
+        fetchWeatherAsync();
+
+    </script>
+
+</body>
+</html>

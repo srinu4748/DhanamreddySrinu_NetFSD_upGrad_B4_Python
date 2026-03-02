@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Feedback Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Feedback Form</h2>
+        <!-- Form -->
+        <form id="feedbackForm">
+            <input type="text" id="feedbackInput" placeholder="Enter your feedback">
+            <button type="submit">Submit Feedback</button>
+        </form>
+        <!-- Message Display dynamically -->
+        <div id="message"></div>
+    </div>
+    <script>
+        // Selecting elements
+        let form = document.getElementById("feedbackForm");
+        let input = document.getElementById("feedbackInput");
+        let message = document.getElementById("message");
+        // Submit event
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            let feedbackText = input.value.trim();
+            if (feedbackText === "") {
+                message.textContent = "Please enter feedback before submitting.";
+                message.classList.remove("success");
+                message.classList.add("error");
+            } else {
+                message.textContent = "Thank you! Your feedback has been submitted.";
+                message.classList.remove("error");
+                message.classList.add("success");
+                input.value = "";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mini Product Search App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h2>Mini Product Search</h2>
+
+    <input type="text" id="searchInput" placeholder="Search products...">
+
+    <ul id="productList"></ul>
+
+    <p id="message"></p>
+
+<script type="module">
+
+/* ===========================
+   MODULE 1: STATE MANAGEMENT
+=========================== */
+
+const state = {
+    products: [
+        "iPhone 15",
+        "Samsung Galaxy S24",
+        "OnePlus 12",
+        "Redmi Note 13",
+        "Realme Narzo",
+        "MacBook Air",
+        "Dell Inspiron",
+        "HP Pavilion",
+        "Sony Headphones",
+        "Boat Earbuds"
+    ],
+    filteredProducts: []
+};
+
+
+/* ===========================
+   MODULE 2: DOM SELECTORS
+=========================== */
+
+const searchInput = document.getElementById("searchInput");
+const productList = document.getElementById("productList");
+const message = document.getElementById("message");
+
+
+/* ===========================
+   MODULE 3: RENDER FUNCTION
+=========================== */
+
+function renderProducts(products) {
+
+    productList.innerHTML = "";
+    message.textContent = "";
+
+    if (products.length === 0) {
+        message.textContent = "No Results Found";
+        return;
+    }
+
+    products.forEach(product => {
+        const li = document.createElement("li");
+        li.textContent = product;
+        productList.appendChild(li);
+    });
+}
+
+
+/* ===========================
+   MODULE 4: FILTER LOGIC
+=========================== */
+
+function filterProducts(searchText) {
+
+    state.filteredProducts = state.products.filter(product =>
+        product.toLowerCase().includes(searchText.toLowerCase())
+    );
+
+    renderProducts(state.filteredProducts);
+}
+
+
+/* ===========================
+   MODULE 5: EVENT HANDLING
+=========================== */
+
+searchInput.addEventListener("input", (event) => {
+    filterProducts(event.target.value);
+});
+
+
+/* Event Delegation */
+productList.addEventListener("click", (event) => {
+    if (event.target.tagName === "LI") {
+        alert("You selected: " + event.target.textContent);
+    }
+});
+
+
+/* ===========================
+   MODULE 6: INITIALIZATION
+=========================== */
+
+function init() {
+    state.filteredProducts = state.products;
+    renderProducts(state.filteredProducts);
+}
+
+init();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic FAQ Toggle Section</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<div class="faq-container">
+    <h2>Frequently Asked Questions</h2>
+
+    <!-- FAQ 1 -->
+    <div class="faq-item">
+        <h3 class="question" id="q1">1. What is HTML?</h3>
+        <p class="answer">HTML stands for HyperText Markup Language. It is used to create and structure web pages.</p>
+    </div>
+
+    <!-- FAQ 2 -->
+    <div class="faq-item">
+        <h3 class="question" id="q2">2. What is CSS?</h3>
+        <p class="answer">CSS stands for Cascading Style Sheets. It is used to style and design web pages.</p>
+    </div>
+
+    <!-- FAQ 3 -->
+    <div class="faq-item">
+        <h3 class="question" id="q3">3. What is JavaScript?</h3>
+        <p class="answer">JavaScript is a programming language used to make web pages interactive and dynamic.</p>
+    </div>
+
+    <!-- FAQ 4 -->
+    <div class="faq-item">
+        <h3 class="question" id="q4">4. What is jQuery?</h3>
+        <p class="answer">jQuery is a JavaScript library that simplifies DOM manipulation and event handling.</p>
+    </div>
+
+    <!-- FAQ 5 -->
+    <div class="faq-item">
+        <h3 class="question" id="q5">5. What is the difference between JavaScript and jQuery?</h3>
+        <p class="answer">JavaScript is a programming language, while jQuery is a library built using JavaScript to simplify coding.</p>
+    </div>
+
+</div>
+<script>
+    $(document).ready(function () {
+        // Hide all answers initially
+        $(".answer").hide();
+        // Click event on question
+        $(".question").click(function () {
+            // Toggle answer with sliding effect
+            $(this).next(".answer").slideToggle();
+            // Highlight selected question
+            $(this).toggleClass("active");
+        });
+    });
+</script>
+</body>
+</html>

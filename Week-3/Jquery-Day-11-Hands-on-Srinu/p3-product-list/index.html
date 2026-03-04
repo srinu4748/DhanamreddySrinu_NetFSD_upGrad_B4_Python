@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product List - Add to Cart</title>
+    <link rel="stylesheet" href="style.css">
+
+     <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h2>🛒 Cart Items: <span id="cart-count">0</span></h2>
+    </div>
+
+    <!-- Product Container -->
+    <div class="product-container">
+
+        <div class="product">
+            <h3>Product 1</h3>
+            <p>Price: ₹500</p>
+            <button class="add-btn" data-id="1">Add to Cart</button>
+            <span class="message"></span>
+        </div>
+
+        <div class="product">
+            <h3>Product 2</h3>
+            <p>Price: ₹700</p>
+            <button class="add-btn" data-id="2">Add to Cart</button>
+            <span class="message"></span>
+        </div>
+
+        <div class="product">
+            <h3>Product 3</h3>
+            <p>Price: ₹900</p>
+            <button class="add-btn" data-id="3">Add to Cart</button>
+            <span class="message"></span>
+        </div>
+
+        <div class="product">
+            <h3>Product 4</h3>
+            <p>Price: ₹1200</p>
+            <button class="add-btn" data-id="4">Add to Cart</button>
+            <span class="message"></span>
+        </div>
+
+    </div>
+
+   
+
+    <script>
+        $(document).ready(function () {
+
+            let count = 0;
+
+            // Event Delegation
+            $(".product-container").on("click", ".add-btn", function () {
+
+                count++;
+
+                // Update cart counter using .text()
+                $("#cart-count").text(count);
+
+                // Disable button using .prop()
+                $(this).prop("disabled", true);
+
+                // Change button text using .text()
+                $(this).text("Added");
+
+                // Add attribute using .attr()
+                $(this).attr("data-added", "true");
+
+                // Show confirmation message
+                $(this).siblings(".message")
+                       .text("✔ Added Successfully")
+                       .addClass("success");
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>

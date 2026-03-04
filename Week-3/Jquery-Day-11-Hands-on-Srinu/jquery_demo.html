@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple jQuery Validation</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <input type="text" id="name" placeholder="Enter your name">
+    <button id="btn">Click Me</button>
+    <h3 id="message"></h3>
+    <script>
+        $("#btn").click(function () {
+            var username = $("#name").val();
+            if (username == "") {
+                $("#message").text("Please enter your name");
+            } else {
+                $("body").css("background-color", "skyblue");
+                $("#message").text("Welcome " + username);
+            }
+        });
+    </script>
+</body>
+</html>

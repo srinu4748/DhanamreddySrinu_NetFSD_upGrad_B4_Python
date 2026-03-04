@@ -1,0 +1,77 @@
+<!--Problem 1 (Level-1): Student Feedback Form Interaction
+Scenario:
+A training institute wants to collect feedback from students through a simple web form. They want to enhance user experience using jQuery to validate inputs and display messages dynamically without reloading the page.
+Requirements
+• Create a feedback form with fields: Name, Email, Course Rating (dropdown), and Comments.
+• Use jQuery selectors to capture form inputs.
+• On clicking the Submit button, validate that Name and Email are not empty.
+• Display a success message dynamically below the form using jQuery DOM manipulation.
+• Clear the form fields after successful submission.
+ 
+️ Technical Constraints
+• Use jQuery CDN for integration.
+• Use basic jQuery syntax: $(selector).action().
+• Do not use plain JavaScript for validation (only jQuery methods).
+• No backend integration required.
+Expectations:
+• Proper use of jQuery selectors and event handling.
+• Clean and readable code structure.
+• Validation messages should be user-friendly.
+Learning Outcome:
+• Understand jQuery syntax and selectors.
+• Learn basic DOM manipulation using jQuery.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Feedback Form</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2>Student Feedback Form</h2>
+    <form id="feedbackForm">
+        <label>Name:</label>
+        <input type="text" id="name">
+        <label>Email:</label>
+        <input type="email" id="email">
+        <label>Course Rating:</label>
+        <input type="text" id="rating" list="ratings" placeholder="Select Rating">
+        <datalist id="ratings">
+            <option value="Excellent">
+            <option value="Good">
+            <option value="Average">
+            <option value="Poor">
+        </datalist>
+        <label>Comments:</label>
+        <textarea id="comments" rows="4"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="message" class="message"></div>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#feedbackForm").submit(function (event) {
+            event.preventDefault();
+            var name = $("#name").val();
+            var email = $("#email").val();
+            var rating = $("#rating").val();
+            // Validation (Name, Email, Course Rating mandatory)
+            if (name === "" || email === ""){
+                $("#message")
+                    .addClass("error")
+                    .text("Name and Email are mandatory fields.");
+            } else {
+                $("#message")   
+                    .addClass("success")
+                    .text("Thank you! Your feedback has been submitted successfully.");
+                $("#feedbackForm")[0].reset();
+            }
+        });
+    });
+</script>
+</body>
+</html>

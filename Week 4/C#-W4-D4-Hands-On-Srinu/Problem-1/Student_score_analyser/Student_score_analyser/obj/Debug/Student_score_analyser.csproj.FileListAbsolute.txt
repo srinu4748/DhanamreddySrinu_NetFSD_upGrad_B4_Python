@@ -1,0 +1,7 @@
+C:\Users\DELL\Desktop\html_demo\Hands_On\Week 4\Day 4\assessment 1\Student_score_analyser\Student_score_analyser\bin\Debug\Student_score_analyser.exe.config
+C:\Users\DELL\Desktop\html_demo\Hands_On\Week 4\Day 4\assessment 1\Student_score_analyser\Student_score_analyser\bin\Debug\Student_score_analyser.exe
+C:\Users\DELL\Desktop\html_demo\Hands_On\Week 4\Day 4\assessment 1\Student_score_analyser\Student_score_analyser\bin\Debug\Student_score_analyser.pdb
+C:\Users\DELL\Desktop\html_demo\Hands_On\Week 4\Day 4\assessment 1\Student_score_analyser\Student_score_analyser\obj\Debug\Student_score_analyser.csproj.AssemblyReference.cache
+C:\Users\DELL\Desktop\html_demo\Hands_On\Week 4\Day 4\assessment 1\Student_score_analyser\Student_score_analyser\obj\Debug\Student_score_analyser.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\html_demo\Hands_On\Week 4\Day 4\assessment 1\Student_score_analyser\Student_score_analyser\obj\Debug\Student_score_analyser.exe
+C:\Users\DELL\Desktop\html_demo\Hands_On\Week 4\Day 4\assessment 1\Student_score_analyser\Student_score_analyser\obj\Debug\Student_score_analyser.pdb

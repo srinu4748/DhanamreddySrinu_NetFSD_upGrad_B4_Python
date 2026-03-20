@@ -1,0 +1,7 @@
+C:\Users\DELL\source\repos\BankBalance\BankBalance\bin\Debug\BankBalance.exe.config
+C:\Users\DELL\source\repos\BankBalance\BankBalance\bin\Debug\BankBalance.exe
+C:\Users\DELL\source\repos\BankBalance\BankBalance\bin\Debug\BankBalance.pdb
+C:\Users\DELL\source\repos\BankBalance\BankBalance\obj\Debug\BankBalance.csproj.AssemblyReference.cache
+C:\Users\DELL\source\repos\BankBalance\BankBalance\obj\Debug\BankBalance.csproj.CoreCompileInputs.cache
+C:\Users\DELL\source\repos\BankBalance\BankBalance\obj\Debug\BankBalance.exe
+C:\Users\DELL\source\repos\BankBalance\BankBalance\obj\Debug\BankBalance.pdb
